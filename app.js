@@ -57,6 +57,9 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
 
+app.get("/", (req, res) => {
+  res.redirect("/listings"); // or res.render("home.ejs");
+});
 
 
 const store=MongoStore.create({
